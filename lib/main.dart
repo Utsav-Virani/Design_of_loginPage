@@ -25,6 +25,19 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
   AnimationController _iconAnimationController;
   Animation<double> _iconAnimation;
 
+  void _home(){
+    Navigator.of(context).push(MaterialPageRoute<void>(
+      builder: (BuildContext context){
+        return Scaffold(
+          appBar: AppBar(
+            title: Text("Home Page"),
+          ),
+          body: Text("Welcome to Home page"),
+        );
+      }
+    ));
+  }
+
   @override
   void initState(){
     super.initState();
@@ -96,7 +109,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                           color: Colors.deepOrangeAccent,
                           textColor: Colors.white70,
                           child: new Text("login"),
-                          onPressed: ()=>{},
+                          onPressed: _home,
                           splashColor: Colors.orange,
                         ),
                       ],
